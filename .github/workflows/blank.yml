@@ -23,8 +23,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
             token: ${{ secrets.ACTIONS_TOKEN }}
-      - name: Checkout carthageDummyD
-        with:
             repository: 'billypchan/carthageDummyD'
             path: carthageDummyD
 
