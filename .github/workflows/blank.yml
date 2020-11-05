@@ -26,7 +26,7 @@ jobs:
         with:
             repository: 'billypchan/carthageDummyD'
             path: carthageDummyD
-
+            token: ${{ secrets.ACTIONS_TOKEN }}
       - name: update D cartfile
         run: |
           sed -i '' 's/\(github "billypchan\/carthageDummyE" ~> \)\(.*\)$/\12.0/g' carthageDummyD/Cartfile
@@ -44,6 +44,9 @@ jobs:
       - name: push
         run: |
           cd carthageDummyD
-          pwd
+          git config --local user.name "Github Action"
           git config --global user.email "billypchan@gmail.com"
-          git push --set-upstream origin chore/bump
+          git push https://$USERNAME:$GITHUB_TOKEN@github.com/billypchan/carthageDummyD
+        env:
+            GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+            USERNAME: github-actions
