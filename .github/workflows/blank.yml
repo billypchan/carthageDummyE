@@ -29,7 +29,9 @@ jobs:
       - name: update D cartfile
         run: |
           sed -i '' 's/\(github "billypchan\/carthageDummyE" ~> \)\(.*\)$/\12.0/g' carthageDummyD/Cartfile
+          carthage update
           cat carthageDummyD/Cartfile
+          ls -l
 
       - name: commit to D
         run: |
@@ -45,7 +47,7 @@ jobs:
           cd carthageDummyD
           git config --local user.name "Github Action"
           git config --global user.email "billypchan@gmail.com"
-          git push https://$USERNAME:$GITHUB_TOKEN@github.com/billypchan/carthageDummyD
+          git push https://$USERNAME:$GITHUB_TOKEN@github.com/billypchan/carthageDummyD.git
         env:
             GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
             USERNAME: billypchan
