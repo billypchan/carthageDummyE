@@ -35,6 +35,7 @@ jobs:
         run: |
           sed -i '' 's/\(github "billypchan\/carthageDummyE" ~> \)\(.*\)$/\12.0/g' carthageDummyD/Cartfile
           cat carthageDummyD/Cartfile
+          cd carthageDummyD
           git add .
           git branch chore/bump
           git commit -m"bump E"
