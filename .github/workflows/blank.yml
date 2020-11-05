@@ -32,11 +32,13 @@ jobs:
           cat carthageDummyD/Cartfile
 
       - name: commit to D
+        uses: actions/checkout@v2
         run: |
           cd carthageDummyD
           git add .
           git branch chore/bump
           git commit -m"bump E"
+          git status
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
