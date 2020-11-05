@@ -48,4 +48,4 @@ jobs:
           git push https://$USERNAME:$GITHUB_TOKEN@github.com/billypchan/carthageDummyD
         env:
             GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
-            USERNAME: github-actions
+            USERNAME: billypchan
