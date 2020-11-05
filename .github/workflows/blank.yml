@@ -26,7 +26,6 @@ jobs:
         with:
             repository: 'billypchan/carthageDummyD'
             path: carthageDummyD
-            token: ${{ secrets.ACTIONS_TOKEN }}
       - name: update D cartfile
         run: |
           sed -i '' 's/\(github "billypchan\/carthageDummyE" ~> \)\(.*\)$/\12.0/g' carthageDummyD/Cartfile
