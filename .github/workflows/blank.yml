@@ -22,7 +22,7 @@ jobs:
       # Checks-out parent repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-            repository: 'billypchan/carthageDummyD'
+            repository: 'https://github.com/billypchan/carthageDummyD.git'
 
       # Runs a single command using the runners shell
       - name: update D cartfile
