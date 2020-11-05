@@ -34,11 +34,11 @@ jobs:
       - name: commit to D
         run: |
           cd carthageDummyD
-          git add .
           git branch chore/bump
           git checkout chore/bump
+          git add .
           git commit -m"bump E"
           git status
           git config --global user.name "github-actions[bot]"
           git config --global user.email "billypchan@gmail.com"
-          git push
+          git push --set-upstream origin chore/bump
