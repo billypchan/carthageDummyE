@@ -20,9 +20,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out parent repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout carthageDummyD
+        uses: actions/checkout@v2
         with:
-            repository: 'https://github.com/billypchan/carthageDummyD.git'
+            repository: 'billypchan/carthageDummyD'
+            path: carthageDummyD
+
+      # ls
+      - name: update D cartfile
+        run: ls
 
       # Runs a single command using the runners shell
       - name: update D cartfile
