@@ -25,11 +25,18 @@ jobs:
         with:
             repository: 'billypchan/carthageDummyD'
             path: carthageDummyD
+
+      - name: update D cartfile
         run: |
           sed -i '' 's/\(github "billypchan\/carthageDummyE" ~> \)\(.*\)$/\12.0/g' carthageDummyD/Cartfile
           cat carthageDummyD/Cartfile
+
+      - name: commit to D
+        run: |
           cd carthageDummyD
           git add .
           git branch chore/bump
           git commit -m"bump E"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
