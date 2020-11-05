@@ -43,6 +43,8 @@ jobs:
           
       - name: push
         run: |
+          cd carthageDummyD
+          pwd
           git config --global user.name "github-actions[bot]"
           git config --global user.email "billypchan@gmail.com"
           git push --set-upstream origin chore/bump
