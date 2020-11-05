@@ -36,10 +36,12 @@ jobs:
           cd carthageDummyD
           git add .
           git branch chore/bump
+          git checkout chore/bump
           git commit -m"bump E"
           git status
       - name: Push changes
         uses: ad-m/github-push-action@master
+        directory: 'carthageDummyD'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
