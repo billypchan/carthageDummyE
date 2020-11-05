@@ -9,7 +9,7 @@ jobs:
     runs-on: macos-10.15
 
     steps:
-      - name: update D cartfile
+      - name: trigger parent repo bump
         run: |
           curl -X POST https://api.github.com/repos/billypchan/carthageDummyD/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
