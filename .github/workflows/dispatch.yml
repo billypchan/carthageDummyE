@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  dispatch:
+    runs-on: macos-10.15
+
+    steps:
+      - name: update D cartfile
+        run: |
+          curl -X POST https://api.github.com/repos/billypchan/carthageDummyD/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.E_SECRET }} \
+          --data '{"event_type": "ping", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
