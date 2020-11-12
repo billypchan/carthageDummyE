@@ -14,9 +14,7 @@ jobs:
         run: |
           curl -X POST https://api.github.com/repos/billypchan/carthageDummyD/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.E_SECRET }} \
           --data '{"event_type": "ping", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
           curl -X POST https://api.github.com/repos/billypchan/carthageDummyB/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.E_SECRET }} \
           --data '{"event_type": "ping", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
